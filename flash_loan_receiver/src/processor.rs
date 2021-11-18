@@ -64,9 +64,9 @@ pub fn process_instruction(
     let _result = invoke(
         &spl_token::instruction::transfer(
             spl_token_program_info.key,
-            destination_liq_info.key,
+            destination_liq_info.key, // B97oCyASsxfkADpJwrSwXJPRoUyM6hbAqpAVc31NGfTi
             source_liq_info.key,
-            user_transfer_authority_info.key,
+            user_transfer_authority_info.key, // AKmS3hLcwsvJnqmoBvUUaGoTsKZQV6Ac5cMpcZR77BWc is owner of destination_liq_info
             &[],
             amount,
         )?,
