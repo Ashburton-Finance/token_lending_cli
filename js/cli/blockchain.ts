@@ -627,21 +627,6 @@ export class Blockchain {
     console.log(`  user LP account (${this.tokenA.lpUserKp.publicKey.toBase58()}):`, this.metrics.tokenALPUserBalance.value.uiAmount);
     console.log(`  protocol LP account (${this.tokenA.lpProtocolKp.publicKey.toBase58()}):`, this.metrics.tokenALPProtocolBalance.value.uiAmount);
 
-    // --------------------------------------- B token
-    this.metrics.tokenBUserBalance = await this.connection.getTokenAccountBalance(this.tokenB.userPk);
-    this.metrics.tokenBHostBalance = await this.connection.getTokenAccountBalance(this.tokenB.hostPk);
-    this.metrics.tokenBProtocolBalance = await this.connection.getTokenAccountBalance(this.tokenB.protocolKp.publicKey);
-    this.metrics.tokenBProtocolFeeBalance = await this.connection.getTokenAccountBalance(this.tokenB.protocolFeeKp.publicKey);
-    this.metrics.tokenBLPUserBalance = await this.connection.getTokenAccountBalance(this.tokenB.lpUserKp.publicKey);
-    this.metrics.tokenBLPProtocolBalance = await this.connection.getTokenAccountBalance(this.tokenB.lpProtocolKp.publicKey);
-    console.log(`B token (${this.tokenB.currency}) balances:`);
-    console.log(`  user account (${this.tokenB.userPk.toBase58()}):`, this.metrics.tokenBUserBalance.value.uiAmount);
-    console.log(`  host account (${this.tokenB.hostPk.toBase58()}):`, this.metrics.tokenBHostBalance.value.uiAmount);
-    console.log(`  protocol account (${this.tokenB.protocolKp.publicKey.toBase58()}):`, this.metrics.tokenBProtocolBalance.value.uiAmount);
-    console.log(`  protocol fee account (${this.tokenB.protocolFeeKp.publicKey.toBase58()}):`, this.metrics.tokenBProtocolFeeBalance.value.uiAmount);
-    console.log(`  user LP account (${this.tokenB.lpUserKp.publicKey.toBase58()}):`, this.metrics.tokenBLPUserBalance.value.uiAmount);
-    console.log(`  protocol LP account (${this.tokenB.lpProtocolKp.publicKey.toBase58()}):`, this.metrics.tokenBLPProtocolBalance.value.uiAmount);
-
     // --------------------------------------- obligation state
     const obligInfo = await this.connection.getAccountInfo(this.obligationKp.publicKey);
     this.metrics.obligState = parseObligation(this.obligationKp.publicKey, obligInfo);
@@ -660,14 +645,6 @@ export class Blockchain {
     console.log('  cumulative borrow rate', this.metrics.reserveAState.data.liquidity.cumulativeBorrowRateWads.toString());
     console.log('  market price', this.metrics.reserveAState.data.liquidity.marketPrice.toString());
 
-    // --------------------------------------- B reserve state
-    const reserveBInfo = await this.connection.getAccountInfo(this.tokenB.reserveKp.publicKey);
-    this.metrics.reserveBState = parseReserve(this.tokenB.reserveKp.publicKey, reserveBInfo);
-    console.log(`B reserve (${this.tokenB.currency}) state:`);
-    console.log('  available liquidity', this.metrics.reserveBState.data.liquidity.availableAmount);
-    console.log('  borrowed liquidity', this.metrics.reserveBState.data.liquidity.borrowedAmountWads.toString());
-    console.log('  cumulative borrow rate', this.metrics.reserveBState.data.liquidity.cumulativeBorrowRateWads.toString());
-    console.log('  market price', this.metrics.reserveBState.data.liquidity.marketPrice.toString());
-    console.log('// ---------------------------------------');
+
   }
 }
