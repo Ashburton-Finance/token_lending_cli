@@ -16,14 +16,30 @@ pub fn process_instruction(
 ) -> ProgramResult {
     msg!("Medad's special Flash Loan Receiver invoked");
     let account_info_iter = &mut accounts.iter();
+
+    msg!("Medad's special Flash Loan Receiver invoked1");
+
     let destination_liq_info = next_account_info(account_info_iter)?;
+
+    msg!("Medad's special Flash Loan Receiver invoked2");
+
     let source_liq_info = next_account_info(account_info_iter)?;
+
+    msg!("Medad's special Flash Loan Receiver invoked3");
+
     let spl_token_program_info = next_account_info(account_info_iter)?;
+
+    msg!("Medad's special Flash Loan Receiver invoked4");
+
     let user_transfer_authority_info = next_account_info(account_info_iter)?;
+
+    msg!("Medad's special Flash Loan Receiver invoked5");
 
     let (tag, rest) = input
         .split_first()
         .ok_or(ProgramError::InvalidInstructionData)?;
+
+    msg!("Medad's special Flash Loan Receiver invoked6");
 
     //make sure the 0th instruction is called
     if *tag != 0 {
@@ -31,8 +47,12 @@ pub fn process_instruction(
         return Err(ProgramError::InvalidInstructionData);
     }
 
+    msg!("Medad's special Flash Loan Receiver invoked7");
+
     //unpack amount as u64
     let amount = unpack_amount(rest)?;
+
+    msg!("Medad's special Flash Loan Receiver invoked8");
 
     //send the tokens back to where they came from
     let _result = invoke(
