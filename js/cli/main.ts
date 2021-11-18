@@ -1,5 +1,5 @@
-import {Blockchain} from './blockchain';
-import {assert} from './util';
+import { Blockchain } from './blockchain';
+import { assert } from './util';
 
 async function main() {
   // --------------------------------------- init

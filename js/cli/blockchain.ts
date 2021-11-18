@@ -34,8 +34,8 @@ import {
   Token,
   TOKEN_PROGRAM_ID,
 } from '@solana/spl-token';
-import {borrowFlashLoanInstruction} from '../src/instructions/borrowFlashLoan';
-import {newAccountWithLamports} from './util';
+import { borrowFlashLoanInstruction } from '../src/instructions/borrowFlashLoan';
+import { newAccountWithLamports } from './util';
 
 // ============================================================================= bc class
 
