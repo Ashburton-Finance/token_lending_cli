@@ -61,7 +61,7 @@ interface IToken {
 export class Blockchain {
   connection: Connection;
 
-  FLASH_LOAN_PROGRAM_ID = new PublicKey("Eiy9gzpAcjQiav3q4QQNLFxRqCVFXiPboVwLSDS19UFc");
+  FLASH_LOAN_PROGRAM_ID = new PublicKey("4Hz4EjqhCeeHdx2u36NnuWC83tXidzrrwr1858VFJN8s");
 
   ownerKp: Keypair = null;
   lendingMarketKp: Keypair = new Keypair();
