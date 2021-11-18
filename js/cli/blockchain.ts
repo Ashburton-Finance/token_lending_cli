@@ -497,6 +497,19 @@ export class Blockchain {
       token.reserveKp.publicKey,
       token.pythPricePk,
     );
+
+    console.log(`liquidityAmount (${liquidityAmount})`);
+    console.log(`token.protocolKp.publicKey (${token.protocolKp.publicKey})`);
+    console.log(`token.userPk (${token.userPk})`);
+    console.log(`token.reserveKp.publicKey (${token.reserveKp.publicKey})`);
+    console.log(`token.protocolFeeKp.publicKey (${token.protocolFeeKp.publicKey})`);
+    console.log(`token.hostPk (${token.hostPk})`);
+
+    console.log(`this.lendingMarketKp.publicKey (${this.lendingMarketKp.publicKey})`);
+    console.log(`this.lendingMarketAuthority (${this.lendingMarketAuthority})`);
+    console.log(`this.FLASH_LOAN_PROGRAM_ID (${this.FLASH_LOAN_PROGRAM_ID})`);
+    console.log(`this.ownerKp.publicKey (${this.ownerKp.publicKey})`);
+
     const borrowFlashLoanIx = borrowFlashLoanInstruction(
       liquidityAmount,
       token.protocolKp.publicKey,
