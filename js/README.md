@@ -15,6 +15,10 @@ yarn add @solana/spl-token-lending @solana/spl-token @solana/web3.js
 ```shell
 npm install @solana/spl-token-lending @solana/spl-token @solana/web3.js
 ```
+## run tests
+```shell
+ts-node cli/main.ts
+```
 
 ## Documentation
 
