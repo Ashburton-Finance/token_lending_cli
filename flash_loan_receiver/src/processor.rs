@@ -14,7 +14,7 @@ pub fn process_instruction(
     accounts: &[AccountInfo],
     input: &[u8],
 ) -> ProgramResult {
-    msg!("Flash Loan Receiver invoked");
+    msg!("Medad's special Flash Loan Receiver invoked");
     let account_info_iter = &mut accounts.iter();
     let destination_liq_info = next_account_info(account_info_iter)?;
     let source_liq_info = next_account_info(account_info_iter)?;
@@ -35,7 +35,7 @@ pub fn process_instruction(
     let amount = unpack_amount(rest)?;
 
     //send the tokens back to where they came from
-    invoke(
+    let _result = invoke(
         &spl_token::instruction::transfer(
             spl_token_program_info.key,
             destination_liq_info.key,
