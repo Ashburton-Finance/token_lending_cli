@@ -16,6 +16,11 @@ yarn add @solana/spl-token-lending @solana/spl-token @solana/web3.js
 npm install @solana/spl-token-lending @solana/spl-token @solana/web3.js
 ```
 
+### Running tests
+```shell
+ts-node cli/main.ts
+```
+
 ## Documentation
 
 - [Client library docs](https://solana-labs.github.io/solana-program-library/token-lending/)
