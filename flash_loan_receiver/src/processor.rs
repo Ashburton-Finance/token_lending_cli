@@ -15,23 +15,29 @@ pub fn process_instruction(
     input: &[u8],
 ) -> ProgramResult {
     msg!("Medad's special Flash Loan Receiver invoked");
+
+    msg!(&accounts.len().to_string());
     let account_info_iter = &mut accounts.iter();
 
     msg!("Medad's special Flash Loan Receiver invoked1");
 
     let destination_liq_info = next_account_info(account_info_iter)?;
 
+    msg!(&destination_liq_info.key.to_string());
     msg!("Medad's special Flash Loan Receiver invoked2");
 
     let source_liq_info = next_account_info(account_info_iter)?;
+    msg!(&source_liq_info.key.to_string());
 
     msg!("Medad's special Flash Loan Receiver invoked3");
 
     let spl_token_program_info = next_account_info(account_info_iter)?;
+    msg!(&spl_token_program_info.key.to_string());
 
     msg!("Medad's special Flash Loan Receiver invoked4");
 
     let user_transfer_authority_info = next_account_info(account_info_iter)?;
+    msg!(&user_transfer_authority_info.key.to_string());
 
     msg!("Medad's special Flash Loan Receiver invoked5");
 
