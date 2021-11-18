@@ -71,10 +71,10 @@ pub fn process_instruction(
             amount,
         )?,
         &[
-            spl_token_program_info.clone(),
-            destination_liq_info.clone(),
             source_liq_info.clone(),
+            destination_liq_info.clone(),
             user_transfer_authority_info.clone(),
+            spl_token_program_info.clone(),
         ],
     );
     Ok(())
